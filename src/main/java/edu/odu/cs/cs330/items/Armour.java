@@ -89,9 +89,7 @@ public class Armour extends Equippable {
     @Override
     public Item clone()
     {
-        Armour cpy = new Armour();
-
-        // Complete this function.
+        Armour cpy = new Armour(this);
 
         return cpy;
     }
@@ -111,9 +109,10 @@ public class Armour extends Equippable {
 
         Armour rhsItem = (Armour) rhs;
 
-        // Complete this function.
-        // Remove the placeholder return
-        return false;
+        return this.getName().equals(rhsItem.getName())
+            && this.material.equals(rhsItem.material)
+            && this.modifier.equals(rhsItem.modifier)
+            && this.element.equals(rhsItem.element);
     }
 
     /**
