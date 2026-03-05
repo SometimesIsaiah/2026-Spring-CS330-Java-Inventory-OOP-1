@@ -81,6 +81,12 @@ public class Armour extends Equippable {
         super.name    = snr.next();
 
         // Complete this function.
+        this.material = snr.next();
+        this.durability = snr.nextInt();
+        this.defense = snr.nextInt();
+        this.modifier = snr.nextInt();
+        this.modifierLevel = snr.nextInt();
+        this.element = snr.next();
     }
 
     /**
@@ -122,9 +128,10 @@ public class Armour extends Equippable {
     @Override
     public int hashCode()
     {
-        // Complete this function.
-        // Remove the placeholder return
-        return -1;
+        return this.getName().hashCode() +
+            this.material.hashCode() +
+            this.modifier.hashCode() +
+            this.element.hashCode();
     }
 
     /**
@@ -138,6 +145,11 @@ public class Armour extends Equippable {
         return String.join(
             System.lineSeparator(),
             String.format("  Nme: %s", super.getName()),
+            String.format("  Dur: %d", this.durability),
+            String.format("  Def: %d", this.defense),
+            String.format("  Mtl: %s", this.material),
+            String.format("  Mdr: %s (Lvl %d)", this.modifier, this.modifierLevel),
+            String.format("  Emt: %s", this.element),
             ""
         );
     }
