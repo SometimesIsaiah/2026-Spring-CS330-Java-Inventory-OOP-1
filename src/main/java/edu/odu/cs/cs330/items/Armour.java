@@ -84,7 +84,7 @@ public class Armour extends Equippable {
         this.material = snr.next();
         this.durability = snr.nextInt();
         this.defense = snr.nextInt();
-        this.modifier = snr.nextInt();
+        this.modifier = snr.next();
         this.modifierLevel = snr.nextInt();
         this.element = snr.next();
     }
